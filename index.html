@@ -191,7 +191,11 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 @media (max-width: 640px) {
-  .hero { min-height: auto; padding-top: 96px; }
+  .hero { min-height: 100svh; padding: 72px 0 0; }
+  /* Free space lands in the logo strip's auto margins: content sits up top,
+     strip centres between button and footer, footer rests on the floor. */
+  .trusted { position: static; margin: auto 0; }
+  .site-footer { position: static; }
   .nav__cta span { display: none; }
 }
 </style>
