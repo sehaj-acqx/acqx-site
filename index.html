@@ -196,6 +196,8 @@ button { font-family: inherit; cursor: pointer; }
      strip centres between button and footer, footer rests on the floor. */
   .trusted { position: static; margin: auto 0; }
   .site-footer { position: static; }
+  .site-footer__line { display: block; }
+  .sep--fold { display: none; }
   .nav__cta span { display: none; }
 }
 </style>
@@ -276,7 +278,7 @@ button { font-family: inherit; cursor: pointer; }
   </div>
 
   <footer class="site-footer">
-    &copy; 2026 acqX. All rights reserved.<span class="sep">|</span>ABN 93 848 297 491<span class="sep">|</span><a href="privacy.html">Privacy Policy</a><span class="sep">|</span><a href="terms.html">Terms &amp; Conditions</a>
+    <span class="site-footer__line">&copy; 2026 acqX. All rights reserved.<span class="sep">|</span>ABN 93 848 297 491</span><span class="sep sep--fold">|</span><span class="site-footer__line"><a href="privacy.html">Privacy Policy</a><span class="sep">|</span><a href="terms.html">Terms &amp; Conditions</a></span>
   </footer>
 </header>
 
