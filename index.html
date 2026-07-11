@@ -120,7 +120,10 @@ button { font-family: inherit; cursor: pointer; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; display: block;
 }
-.hero__video-embed { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.hero__video-embed {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+  display: block; background: #000; object-fit: cover;
+}
 .hero__video-frame.is-playing { cursor: default; }
 .hero__video-frame.is-playing:hover { transform: none; }
 .hero__video-play {
@@ -230,9 +233,8 @@ button { font-family: inherit; cursor: pointer; }
     </p>
 
     <div class="hero__video">
-      <button class="hero__video-frame" id="vsl" data-yt="LfuaYYxTBho" aria-label="Play the acqX video">
-        <img class="hero__video-thumb" src="https://i.ytimg.com/vi/LfuaYYxTBho/maxresdefault.jpg" alt=""
-             onerror="this.src='https://i.ytimg.com/vi/LfuaYYxTBho/hqdefault.jpg'">
+      <button class="hero__video-frame" id="vsl" aria-label="Play the acqX video">
+        <img class="hero__video-thumb" src="video/vsl-poster.jpg" alt="">
         <div class="hero__video-ph">
           <div class="hero__video-play">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4v16l13-8z"/></svg>
@@ -286,15 +288,17 @@ button { font-family: inherit; cursor: pointer; }
   document.getElementById('vsl').addEventListener('click', function () {
     var frame = document.createElement('div');
     frame.className = 'hero__video-frame is-playing';
-    var embed = document.createElement('iframe');
-    embed.className = 'hero__video-embed';
-    embed.src = 'https://www.youtube-nocookie.com/embed/' + this.dataset.yt +
-                '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-    embed.title = 'acqX';
-    embed.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-    embed.allowFullscreen = true;
-    frame.appendChild(embed);
+    var video = document.createElement('video');
+    video.className = 'hero__video-embed';
+    video.src = 'video/vsl.mp4';
+    video.poster = 'video/vsl-poster.jpg';
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.setAttribute('controlslist', 'nodownload');
+    frame.appendChild(video);
     this.replaceWith(frame);
+    video.play();
   });
 </script>
 
