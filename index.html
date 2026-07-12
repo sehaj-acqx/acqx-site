@@ -195,9 +195,11 @@ button { font-family: inherit; cursor: pointer; }
 
 @media (max-width: 640px) {
   .hero { min-height: 100svh; padding: 72px 0 0; }
-  /* Free space lands in the logo strip's auto margins: content sits up top,
-     strip centres between button and footer, footer rests on the floor. */
-  .trusted { position: static; margin: auto 0; }
+  /* Gap above the strip is fixed so it reads the same whatever the viewport
+     height (Instagram's in-app browser is shorter than a real one). All the
+     leftover height lands in the auto bottom margin - empty space no one sees -
+     which still leaves the footer on the floor. */
+  .trusted { position: static; margin: 88px 0 auto; }
   .site-footer { position: static; }
   .site-footer__line { display: block; }
   .sep--fold { display: none; }
