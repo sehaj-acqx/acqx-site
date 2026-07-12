@@ -198,10 +198,7 @@ button { font-family: inherit; cursor: pointer; }
      their viewport mid-scroll, and they don't reliably honour svh, so any live
      viewport unit here makes the layout visibly shift as you scroll. */
   .hero { min-height: var(--vh0, 100svh); padding: 72px 0 68px; }
-  /* Auto margins centre the strip between the button and the footer's top line.
-     Safe against scroll shift because --vh0 is frozen, not a live viewport unit.
-     top offset biases it ~5% of the gap upward. */
-  .trusted { position: relative; top: -14px; margin: auto 0; }
+  .trusted { position: static; margin: 18px 0 0; }
   .site-footer__line { display: block; }
   .sep--fold { display: none; }
   .nav__cta span { display: none; }
