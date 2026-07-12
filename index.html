@@ -194,13 +194,12 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 @media (max-width: 640px) {
-  .hero { min-height: 100svh; padding: 72px 0 0; }
-  /* Gap above the strip is fixed so it reads the same whatever the viewport
-     height (Instagram's in-app browser is shorter than a real one). All the
-     leftover height lands in the auto bottom margin - empty space no one sees -
-     which still leaves the footer on the floor. */
-  .trusted { position: static; margin: 40px 0 auto; }
-  .site-footer { position: static; }
+  /* Gaps between content are fixed, so nothing shifts when an in-app browser
+     (Instagram) grows its viewport mid-scroll. svh - not vh - is the collapsed-
+     chrome height, which stays constant while scrolling. The footer stays pinned
+     to the bottom; only dead space above it flexes. */
+  .hero { min-height: 100svh; padding: 72px 0 76px; }
+  .trusted { position: static; margin: 44px 0 0; }
   .site-footer__line { display: block; }
   .sep--fold { display: none; }
   .nav__cta span { display: none; }
